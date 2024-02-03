@@ -40,7 +40,7 @@ module.exports = {
       parser: '@typescript-eslint/parser',
       parserOptions: {
         // ...
-        project: './tsconfig.json',
+        project: './tsconfig.eslint.json',
         extraFileExtensions: ['.svelte'], // This is a required setting in `@typescript-eslint/parser` v4.24.0.
       },
     },
