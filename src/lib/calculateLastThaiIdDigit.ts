@@ -1,8 +1,6 @@
-import type { ThaiIdWithoutLastDigit } from './thaiId.types'
+import type { TwelveDigitString } from './thaiId.types'
 
-export const calculateLastThaiIdDigit = (
-  id: ThaiIdWithoutLastDigit,
-): number => {
+export const calculateLastThaiIdDigit = (id: TwelveDigitString): number => {
   if (id.length !== 12) {
     throw new Error('Invalid Thai ID length, requires 12 digits.')
   }
