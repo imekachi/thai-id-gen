@@ -1,17 +1,32 @@
 <script lang="ts">
-  console.log('hello')
+  import { generateThaiId } from './lib/generateThaiId'
+
+  let generatedId = ''
+  function handleSubmit() {
+    generatedId = generateThaiId()
+  }
 </script>
 
 <main>
-  <h1 class="text-center">Vite + Svelte</h1>
-
-  <p>
-    Check out <a
-      href="https://github.com/sveltejs/kit#readme"
-      target="_blank"
-      rel="noreferrer">SvelteKit</a
-    >, the official Svelte app framework powered by Vite!
-  </p>
-
-  <p class="read-the-docs">Click on the Vite and Svelte logos to learn more</p>
+  <div>
+    <h1>Thai ID Gen</h1>
+    <p>Generate and validate Thai ID number</p>
+  </div>
+  <section>
+    <h2>Generate ID</h2>
+    <form on:submit|preventDefault={handleSubmit}>
+      <div>
+        <!-- "tabular-nums" forces numbers to have the same width -->
+        <!-- when generating numbers, it won't shift around -->
+        <input
+          class="tabular-nums"
+          name="generatedThaiId"
+          type="text"
+          value={generatedId}
+          readonly
+        />
+      </div>
+      <button type="submit">Generate</button>
+    </form>
+  </section>
 </main>
