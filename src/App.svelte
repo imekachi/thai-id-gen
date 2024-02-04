@@ -8,25 +8,33 @@
 </script>
 
 <main>
-  <div>
-    <h1>Thai ID Gen</h1>
+  <div
+    class="h-[60dvh] grid place-content-center text-center text-violet-200 p-4"
+  >
+    <h1 class="text-2xl font-semibold">Thai ID Gen</h1>
     <p>Generate and validate Thai ID number</p>
   </div>
-  <section>
-    <h2>Generate ID</h2>
-    <form on:submit|preventDefault={handleSubmit}>
-      <div>
+  <section class="p-6">
+    <h2 class="text-violet-200 font-medium mb-2">Generate ID</h2>
+    <form on:submit|preventDefault={handleSubmit} class="grid gap-4">
+      <div
+        class="flex gap-2 w-full rounded-lg border border-zinc-600 bg-zinc-700 outline-none shadow-md"
+      >
         <!-- "tabular-nums" forces numbers to have the same width -->
         <!-- when generating numbers, it won't shift around -->
         <input
-          class="tabular-nums"
+          class="tabular-nums text-sm text-violet-200 p-2.5 w-full bg-transparent outline-none border-0 focus:ring-0"
           name="generatedThaiId"
           type="text"
           value={generatedId}
           readonly
         />
       </div>
-      <button type="submit">Generate</button>
+      <button
+        type="submit"
+        class="text-sm font-medium text-white rounded-lg border border-violet-600 bg-violet-500 p-2.5 w-full shadow-md hover:bg-violet-400 hover:border-violet-500 hover:text-white"
+        >Generate</button
+      >
     </form>
   </section>
 </main>
