@@ -49,6 +49,8 @@ jobs:
           path: dist
 
   deploy:
+    # Requires the build job to complete successfully before deploying
+    needs: build
     # This makes the job run on a protected environment
     # by default it will run only from your main branch.
     # To configure protection rules,
